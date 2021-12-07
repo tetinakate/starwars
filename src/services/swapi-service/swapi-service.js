@@ -15,16 +15,9 @@ class SwapiService {
       }
       return await res.json();
     }
-    // _transformPeople = (person) => {
-    //   return{
-    //     name: person.name,
-    //     age: person.birth_year
-    //   }
-    // }
+  
     async getAllPeople(offset = this.apiBasePage) {
       const res = await this.getResource(`/people/?page=${offset}`);
-      console.log('url results =', res.results)
-      //return res.results.map(this._transformPeople);
       return res.results;
     }
     getPerson(id) {

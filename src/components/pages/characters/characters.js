@@ -3,7 +3,6 @@ import SwapiService from "../../../services/swapi-service";
 import { Layout } from "../../../containers/layout";
 import { getData } from "../../../services";
 import { API } from "../../../constants";
-import { isEmpty } from "lodash";
 
 import imgSrc from "../../../assets/img";
 
@@ -34,7 +33,6 @@ export const Characters = () => {
         getPersonList();
       }, []);
 
-    console.log('data', data)
     return(
         <Layout data={data} isLoading={isLoading}>
             <h1>Characters</h1>
@@ -42,19 +40,12 @@ export const Characters = () => {
                 {
                     data.map((person, index) => {
                         return(
-                            <div key={person.name} className="item">
+                            <div key={index + 1} className="item">
                                 <p><span>{person.name}</span></p>
                                 <div>
                                     <img src={`${swapiService.getCharactersImg(index + 1)}.jpg`} alt={person.name} onError={handleImgError} />
                                 </div>
-                                {/* <p>День рождения: {person.birth_year}</p>
-                                <p>Пол: {person.gender}</p>
-                                <p>Родная планета: {person.homeworld}</p>
-                                <p>Рост: {person.height}</p>
-                                <p>Вес: {person.mass}</p>
-                                <p>Цвет кожи: {person.skin_color}</p>
-                                <p>Цвет глаз: {person.eye_color}</p>
-                                <p>Цвет волос: {person.hair_color}</p> */}
+                                
                             </div>
                         )
                     })

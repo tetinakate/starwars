@@ -8,7 +8,6 @@ export const getData = async (url) => {
 
             return result.map((res) => res?.data)
         }
-        console.log(url);
         const result = await axios(url);
 
         if (result?.status === 200) {

@@ -2,7 +2,6 @@ import React, { useState, useEffect} from "react";
 import SwapiService from "../../../services/swapi-service";
 import { getData } from "../../../services";
 import { API } from "../../../constants";
-import { isEmpty } from "lodash";
 
 import imgSrc from "../../../assets/img";
 import "./planets.css";
@@ -32,13 +31,6 @@ export const Planets = () => {
         getPlanetList();
     }, [])
 
-    if(isLoading){
-        return <p>Loading...</p>;
-    }
-    if(isEmpty(data)){
-        return <p>Data not found...</p>;
-    }
-
     return(
         <Layout data={data} isLoading={isLoading}>
             <h1>Planets</h1>
@@ -46,15 +38,11 @@ export const Planets = () => {
                 {
                     data.map( (planet, index) => {
                         return(
-                            <div key={planet.name} className="item">
+                            <div key={index + 1} className="item">
                                 <p><span>{planet.name}</span></p>
                                 <div>
                                     <img src={`${swapiService.getPlanetImg(index + 1)}.jpg`} alt={planet.name} onError={handleImgError} />
                                 </div>
-                                {/* <p>Период вращения: {planet.rotation_period}</p>
-                                <p>Диаметр: {planet.diameter}</p>
-                                <p>Популяция: {planet.population}</p>
-                                <p>Климат: {planet.climate}</p> */}
                             </div>
                         )
                     })

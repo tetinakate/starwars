@@ -8,7 +8,6 @@ import { Starships } from "../pages/starships";
 import { NotFound } from "../pages/404";
 import RandomPlanet from "../random-planet";
 import ItemList from "../item-list";
-//import { API } from "../../constants/api";
 
 import "./app.css";
 
