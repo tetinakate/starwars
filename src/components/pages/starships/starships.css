@@ -1,0 +1,23 @@
+.starships {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.starships .item{
+    margin: 10px;
+    border: 1px solid #FFFF;
+    padding: 10px;
+    width: 330px;
+    height: 250px;
+    overflow: hidden;
+    text-align: center;
+}
+.starships .item span{
+    color: #00bc8c;
+    font-size: 18px;
+}
+.starships .item img{
+    width: 100%;
+  }

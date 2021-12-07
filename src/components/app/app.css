@@ -1,0 +1,12 @@
+.button.load-more {
+    text-align: center;
+}
+button.btn-load-more {
+    color: #FFFF;
+    background: #00bc8c;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+button.btn-load-more:hover{
+    opacity: 0.7;
+}
