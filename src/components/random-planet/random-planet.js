@@ -35,6 +35,8 @@ export default class RandomPlanet extends Component {
 
       return (
         <div className="random-planet jumbotron rounded">
+          
+          
           <img className="planet-image"
                src="https://starwars-visualguide.com/assets/img/planets/5.jpg" alt={name} />
           <div>

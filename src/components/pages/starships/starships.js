@@ -32,7 +32,6 @@ export const Starships = () => {
     }, [])
 
 
-    console.log('data', data)
     return(
         <Layout data={data} isLoading={isLoading}>
             <h1>Starships</h1>
